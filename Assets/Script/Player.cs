@@ -13,9 +13,16 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float maxSpeed;
     [SerializeField] private float decreasevalue;
+
+    [SerializeField] private int life;
+
+    [SerializeField] private float hitCooldown;
+
+    private Animator animator;
 	// Use this for initialization
 	void Start ()
 	{
+	    animator = GetComponent<Animator>();
 	    rigidbody2D = GetComponent<Rigidbody2D>();
 	}
 	
@@ -80,4 +87,27 @@ public class Player : MonoBehaviour
 	        }
 	    }
 	}
+
+    public void Hit(int damage)
+    {
+        if (!animator.GetBool("HitCooldown"))
+        {
+            life -= damage;
+            if (life <= 0)
+            {
+                animator.SetTrigger("Death");
+            }
+            else
+            {
+                StartCoroutine(Animation("HitCooldown", hitCooldown));
+            }
+        }
+    }
+
+    IEnumerator Animation(string animName, float time)
+    {
+        animator.SetBool(animName, true);
+        yield return new WaitForSecondsRealtime(time);
+        animator.SetBool(animName, false);
+    }
 }

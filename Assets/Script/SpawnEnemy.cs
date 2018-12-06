@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefab;
     [SerializeField] private float spawnDelay;
-	// Use this for initialization
-	void Start ()
-	{
-	    StartCoroutine(SpawnDelay());
-	}
+    [SerializeField] private float startDelay;
+    // Use this for initialization
+    void Start ()
+    {
+        StartCoroutine(SpawnDelay());
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,6 +21,7 @@ public class SpawnEnemy : MonoBehaviour
 
     IEnumerator SpawnDelay()
     {
+        yield return new WaitForSecondsRealtime(startDelay);
         while (true)
         {
             yield return new WaitForSecondsRealtime(spawnDelay);

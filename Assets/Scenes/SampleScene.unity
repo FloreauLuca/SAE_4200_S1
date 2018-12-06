@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e424553e04b944ebccc8ab9afbe237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 0}
   speed: 0.1
 --- !u!4 &30544334
 Transform:
@@ -194,7 +195,7 @@ GameObject:
   - component: {fileID: 481222506}
   - component: {fileID: 481222507}
   m_Layer: 0
-  m_Name: WallRight
+  m_Name: WallLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +208,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481222505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: -10, z: 0}
+  m_LocalPosition: {x: -5, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 540492582}
@@ -226,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallPrefab: {fileID: 1235551932780418, guid: d7bc4ee7c6c463140b1b39abad072cc8, type: 2}
+  vector: {x: 0, y: 0, z: 0}
 --- !u!1 &509521493
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,9 +238,10 @@ GameObject:
   - component: {fileID: 509521494}
   - component: {fileID: 509521495}
   - component: {fileID: 509521496}
+  - component: {fileID: 509521497}
   m_Layer: 0
   m_Name: SpawnEnemy
-  m_TagString: Untagged
+  m_TagString: SpawnEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,7 +252,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 509521493}
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -265,7 +268,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 6, y: 20}
@@ -294,7 +297,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab:
   - {fileID: 1461595530635482, guid: 5f9b94ffdb1c66c4d83a82522d449cd2, type: 2}
-  spawnDelay: 1
+  spawnDelay: 2
+  startDelay: 1
+--- !u!50 &509521497
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 509521493}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +352,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.53426486, g: 0.5471698, b: 0.53644, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -382,9 +406,10 @@ GameObject:
   - component: {fileID: 540492582}
   - component: {fileID: 540492583}
   - component: {fileID: 540492584}
+  - component: {fileID: 540492585}
   m_Layer: 0
   m_Name: SpawnEnemy
-  m_TagString: Untagged
+  m_TagString: SpawnEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -411,7 +436,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 6, y: 20}
@@ -440,7 +465,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab:
   - {fileID: 1461595530635482, guid: 5f9b94ffdb1c66c4d83a82522d449cd2, type: 2}
-  spawnDelay: 1
+  spawnDelay: 2
+  startDelay: 0
+--- !u!50 &540492585
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 540492581}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1580079235
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +497,7 @@ GameObject:
   - component: {fileID: 1580079236}
   - component: {fileID: 1580079237}
   m_Layer: 0
-  m_Name: WallLeft
+  m_Name: WallRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,7 +510,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1580079235}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -10, z: 0}
+  m_LocalPosition: {x: 5, y: -10, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 509521494}
@@ -483,6 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallPrefab: {fileID: 1235551932780418, guid: d7bc4ee7c6c463140b1b39abad072cc8, type: 2}
+  vector: {x: 0, y: 0, z: 0}
 --- !u!1 &1983599451
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,9 +541,10 @@ GameObject:
   - component: {fileID: 1983599454}
   - component: {fileID: 1983599453}
   - component: {fileID: 1983599455}
+  - component: {fileID: 1983599456}
   m_Layer: 0
   m_Name: Penguin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,7 +582,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1983599454
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -546,7 +594,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -575,6 +623,26 @@ MonoBehaviour:
   type: 0
   maxSpeed: 5
   decreasevalue: 1
+  life: 10
+  hitCooldown: 5
+--- !u!95 &1983599456
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1983599451}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ceea8fd319cc9e04282692f68a259dab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2105455565
 GameObject:
   m_ObjectHideFlags: 0

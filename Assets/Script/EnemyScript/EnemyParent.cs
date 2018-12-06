@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class EnemyParent : MonoBehaviour
 {
+    [SerializeField] protected int damage;
+
 	// Use this for initialization
-	void Start ()
+	protected void Start ()
 	{
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	    transform.position = new Vector2(transform.position.x, transform.position.y + GameManager.Instance.Speed);
-        Debug.Log("debug");
+	protected void Update () {
+	    GetComponent<Transform>().position = new Vector2(GetComponent<Transform>().position.x, GetComponent<Transform>().position.y + GameManager.Instance.Speed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<Player>().Hit(damage);
+        }
+
+        if (other.tag == "SpawnEnemy")
+        {
+            Debug.Log(true);
+
+            Destroy(gameObject);
+        }
     }
 }

@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
+    [SerializeField] private GameObject camera;
+    public GameObject Camera
+    {
+        get { return camera; }
+        set { camera = value; }
+    }
 
     [SerializeField] private float speed = 1;
     public float Speed
