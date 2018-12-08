@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
 
     [SerializeField] private float endTime;
+    public float EndTime
+    { get { return endTime; } set { endTime = value; } }
     private float currentTime;
 
     private static GameManager instance;
