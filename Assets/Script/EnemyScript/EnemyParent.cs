@@ -14,7 +14,7 @@ public class EnemyParent : MonoBehaviour
 	
 	// Update is called once per frame
 	protected void Update () {
-	    GetComponent<Transform>().position = new Vector2(GetComponent<Transform>().position.x, GetComponent<Transform>().position.y + GameManager.Instance.Speed);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,13 +22,6 @@ public class EnemyParent : MonoBehaviour
         if (other.tag == "Player")
         {
             other.GetComponent<Player>().Hit(damage);
-        }
-
-        if (other.tag == "SpawnEnemy")
-        {
-            Debug.Log(true);
-
-            Destroy(gameObject);
         }
     }
 }

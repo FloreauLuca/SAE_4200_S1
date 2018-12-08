@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    enum Type
+    {
+        EXACT,
+        INERTIE,
+        VELOCITY
+
+    }
     private Rigidbody2D rigidbody2D;
 
     [SerializeField] private float playerSpeed;
@@ -17,7 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int life;
 
     [SerializeField] private float hitCooldown;
-
+    [SerializeField] private Type currentType;
     private Animator animator;
 	// Use this for initialization
 	void Start ()
@@ -29,7 +36,7 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (type)
+	    if (currentType == Type.EXACT)
 	    {
 	        float v = Input.GetAxis("Vertical");
 	        Vector2 myVelocityY = Vector2.up;
@@ -39,8 +46,8 @@ public class Player : MonoBehaviour
 	        myVelocityX *= h * playerSpeed;
 	        rigidbody2D.velocity = myVelocityX + myVelocityY;
 	    }
-	    else
-	    {
+	    if (currentType == Type.INERTIE)
+        {
 	        float v = Input.GetAxis("Vertical");
             if (v * rigidbody2D.velocity.y < maxSpeed)
 	        {
@@ -56,37 +63,48 @@ public class Player : MonoBehaviour
 	            rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, Mathf.Sign(rigidbody2D.velocity.y) * maxSpeed);
 	        }
 
-	        if (Mathf.Abs(rigidbody2D.velocity.y) > maxSpeed)
-	        {
-	            while (rigidbody2D.velocity.y > 0.001 || rigidbody2D.velocity.y > 0.001 ||
-	                   rigidbody2D.velocity.y > 0.001 || rigidbody2D.velocity.y > 0.001)
-	            {
-	                float xdecrease = 0;
-	                float ydecrease = 0;
-	                if (rigidbody2D.velocity.x > 0)
-	                {
-	                    xdecrease = -decreasevalue;
-	                }
-	                else
-	                {
-	                    xdecrease = +decreasevalue;
-	                }
+            if (Mathf.Abs(rigidbody2D.velocity.y) > maxSpeed)
+            {
+                while (rigidbody2D.velocity.y > 0.001 || rigidbody2D.velocity.y > 0.001 ||
+                       rigidbody2D.velocity.y > 0.001 || rigidbody2D.velocity.y > 0.001)
+                {
+                    float xdecrease = 0;
+                    float ydecrease = 0;
+                    if (rigidbody2D.velocity.x > 0)
+                    {
+                        xdecrease = -decreasevalue;
+                    }
+                    else
+                    {
+                        xdecrease = +decreasevalue;
+                    }
 
-	                if (rigidbody2D.velocity.y > 0)
-	                {
-	                    ydecrease = -decreasevalue;
-	                }
-	                else
-	                {
-	                    ydecrease = +decreasevalue;
-	                }
+                    if (rigidbody2D.velocity.y > 0)
+                    {
+                        ydecrease = -decreasevalue;
+                    }
+                    else
+                    {
+                        ydecrease = +decreasevalue;
+                    }
 
-	                rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x + xdecrease,
-	                    rigidbody2D.velocity.y + ydecrease);
-	            }
-	        }
-	    }
-	}
+                    rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x + xdecrease,
+                        rigidbody2D.velocity.y + ydecrease);
+                }
+            }
+
+        }
+	    if (currentType == Type.VELOCITY)
+	    {
+	        float v = Input.GetAxis("Vertical");
+	        Vector2 myVelocityY = Vector2.up;
+	        myVelocityY *= v * playerSpeed;
+	        float h = Input.GetAxis("Horizontal");
+	        Vector2 myVelocityX = Vector2.right;
+	        myVelocityX *= h * playerSpeed;
+	        rigidbody2D.velocity += myVelocityX + myVelocityY;
+        }
+    }
 
     public void Hit(int damage)
     {
@@ -96,6 +114,7 @@ public class Player : MonoBehaviour
             if (life <= 0)
             {
                 animator.SetTrigger("Death");
+                GlobalGameManager.Instance.Death();
             }
             else
             {
