@@ -826,6 +826,67 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &931466986
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4068403779513998, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068403779513998, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068403779513998, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068403779513998, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068403779513998, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068403779513998, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068403779513998, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068403779513998, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 212428043689187086, guid: 62d3577a08591eb4c859f2af5a77411a,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646604089388850, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61377828877347506, guid: 62d3577a08591eb4c859f2af5a77411a,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 61377828877347506, guid: 62d3577a08591eb4c859f2af5a77411a,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &936363163
 GameObject:
   m_ObjectHideFlags: 0

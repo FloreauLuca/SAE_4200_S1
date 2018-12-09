@@ -56,6 +56,9 @@ MonoBehaviour:
   enemyPrefab:
   - {fileID: 1055125565562638, guid: 62d3577a08591eb4c859f2af5a77411a, type: 2}
   - {fileID: 1557407621452558, guid: 09ffdaf8d9732414fa541886626ba1fb, type: 2}
+  - {fileID: 1019895820997654, guid: 200ce21de78794f4a8874e19bc70f254, type: 2}
   enemyDelay: 4
   paused: 0
+  lifeUI: {fileID: 0}
+  cursorUI: {fileID: 0}
   endTime: 60
