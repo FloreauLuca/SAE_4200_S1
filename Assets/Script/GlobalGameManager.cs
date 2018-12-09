@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class GlobalGameManager : MonoBehaviour {
@@ -9,6 +10,7 @@ public class GlobalGameManager : MonoBehaviour {
     public bool Win
     { get { return win; } set { win = value; } }
 
+    private AudioMixer audiomixer;
 
     private static GlobalGameManager instance;
     public static GlobalGameManager Instance
