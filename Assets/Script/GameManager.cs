@@ -28,8 +28,12 @@ public class GameManager : MonoBehaviour
     { get { return paused; } set { paused = value; } }
 
     [SerializeField] private GameObject lifeUI;
-    public GameObject LifeUi
+    public GameObject LifeUI
     { get { return lifeUI; } set { lifeUI = value; } }
+
+    [SerializeField] private GameObject cursorUI;
+    public GameObject CursorUI
+    { get { return cursorUI; } set { cursorUI = value; } }
 
     [SerializeField] private float endTime;
     public float EndTime
@@ -60,8 +64,14 @@ public class GameManager : MonoBehaviour
 	    {
 	        currentTime += Time.deltaTime;
 	    }
+        if (currentTime % 1 <= 0.1)
+	    {
+            SetCursor();
+	        Debug.Log("set");
 
-	    if (Input.GetButtonDown("Pause"))
+        }
+
+        if (Input.GetButtonDown("Pause"))
 	    {
 	        if (paused)
 	        {
@@ -80,5 +90,11 @@ public class GameManager : MonoBehaviour
     {
         lifeUI.GetComponent<RectTransform>().sizeDelta = new Vector2(lifeUI.GetComponent<RectTransform>().sizeDelta.y * life, lifeUI.GetComponent<RectTransform>().sizeDelta.y);
 
+    }
+
+    public void SetCursor()
+    {
+        cursorUI.GetComponent<Slider>().value = currentTime / endTime;
+        Debug.Log(currentTime/endTime);
     }
 }
