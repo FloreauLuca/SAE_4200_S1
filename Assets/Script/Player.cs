@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using UnityEditor.Experimental.U2D;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -25,6 +26,14 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float hitCooldown;
     [SerializeField] private Type currentType;
+
+    [SerializeField] private Sprite playerIdle;
+    [SerializeField] private Sprite playerLeft;
+    [SerializeField] private Sprite playerRight;
+    [SerializeField] private Sprite playerUp;
+    [SerializeField] private Sprite playerDown;
+
+
     private Animator animator;
 	// Use this for initialization
 	void Start ()
@@ -104,6 +113,26 @@ public class Player : MonoBehaviour
 	        myVelocityX *= h * playerSpeed;
 	        rigidbody2D.velocity += myVelocityX + myVelocityY;
         }
+
+	    if (Input.GetAxis("Vertical") > 0)
+	    {
+	        GetComponentInChildren<SpriteRenderer>().sprite = playerUp;
+	    } else if (Input.GetAxis("Vertical") < 0)
+	    {
+            GetComponentInChildren<SpriteRenderer>().sprite = playerDown;
+	    }
+	    else if (Input.GetAxis("Horizontal") > 0)
+	    {
+            GetComponentInChildren<SpriteRenderer>().sprite = playerRight;
+	    }
+	    else if (Input.GetAxis("Horizontal") < 0)
+	    {
+            GetComponentInChildren<SpriteRenderer>().sprite = playerLeft;
+	    }
+	    else
+	    {
+            GetComponentInChildren<SpriteRenderer>().sprite = playerIdle;
+	    }
     }
 
     public void Hit(int damage)
@@ -111,6 +140,7 @@ public class Player : MonoBehaviour
         if (!animator.GetBool("HitCooldown"))
         {
             life -= damage;
+            GameManager.Instance.SetUILife(life);
             if (life <= 0)
             {
                 animator.SetTrigger("Death");

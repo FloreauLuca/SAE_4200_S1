@@ -68,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 1182601260431390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4372278000866362}
   m_RootOrder: 0
@@ -116,7 +116,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!95 &95826492478991228
 Animator:
@@ -149,11 +149,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 10
   type: 1
-  maxSpeed: 5
+  maxSpeed: 25
   decreasevalue: 1
-  life: 10
+  life: 3
   hitCooldown: 2
   currentType: 0
+  playerIdle: {fileID: 21300000, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
+  playerLeft: {fileID: 21300006, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
+  playerRight: {fileID: 21300008, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
+  playerUp: {fileID: 21300002, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
+  playerDown: {fileID: 21300004, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
 --- !u!212 &212530652011498752
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -186,11 +191,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1761283379
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6a74f20d10959f6478331cf324985920, type: 3}
-  m_Color: {r: 0.05900679, g: 0.085663445, b: 0.9622642, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

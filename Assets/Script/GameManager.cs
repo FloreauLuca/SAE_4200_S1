@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float speed = 1;
     public float Speed
     { get { return speed; } set { speed = value; } }
-
 
     [SerializeField] private GameObject[] enemyPrefab;
     public GameObject[] EnemyPrefab
@@ -27,6 +27,13 @@ public class GameManager : MonoBehaviour
     public bool Paused
     { get { return paused; } set { paused = value; } }
 
+    [SerializeField] private GameObject lifeUI;
+    public GameObject LifeUI
+    { get { return lifeUI; } set { lifeUI = value; } }
+
+    [SerializeField] private GameObject cursorUI;
+    public GameObject CursorUI
+    { get { return cursorUI; } set { cursorUI = value; } }
 
     [SerializeField] private float endTime;
     public float EndTime
@@ -57,8 +64,14 @@ public class GameManager : MonoBehaviour
 	    {
 	        currentTime += Time.deltaTime;
 	    }
+        if (currentTime % 1 <= 0.1)
+	    {
+            SetCursor();
+	        Debug.Log("set");
 
-	    if (Input.GetButtonDown("Pause"))
+        }
+
+        if (Input.GetButtonDown("Pause"))
 	    {
 	        if (paused)
 	        {
@@ -72,4 +85,16 @@ public class GameManager : MonoBehaviour
 	        }
         }
 	}
+
+    public void SetUILife(int life)
+    {
+        lifeUI.GetComponent<RectTransform>().sizeDelta = new Vector2(lifeUI.GetComponent<RectTransform>().sizeDelta.y * life, lifeUI.GetComponent<RectTransform>().sizeDelta.y);
+
+    }
+
+    public void SetCursor()
+    {
+        cursorUI.GetComponent<Slider>().value = currentTime / endTime;
+        Debug.Log(currentTime/endTime);
+    }
 }
