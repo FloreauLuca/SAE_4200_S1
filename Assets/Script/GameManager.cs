@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
         if (currentTime % 1 <= 0.1)
 	    {
             SetCursor();
-	        Debug.Log("set");
 
         }
 
@@ -98,6 +97,5 @@ public class GameManager : MonoBehaviour
     public void SetCursor()
     {
         cursorUI.GetComponent<Slider>().value = currentTime / endTime;
-        Debug.Log(currentTime/endTime);
     }
 }

@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  hitSound: {fileID: 0}
   deskPrefab: {fileID: 1577830077123442, guid: 41500f326a454274ab53dad9e5af4056, type: 2}
   launcherRate: 0.5
 --- !u!114 &114128501971396914
