@@ -5,7 +5,7 @@ using UnityEngine;
 public class CloudSpawner : MonoBehaviour
 {
 
-    [SerializeField] private GameObject cloudPrefab;
+    [SerializeField] private GameObject[] cloudPrefab;
 
     [SerializeField] private float cloudDelay;
 	// Use this for initialization
@@ -23,7 +23,10 @@ public class CloudSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSecondsRealtime(cloudDelay);
-            Instantiate(cloudPrefab, new Vector3(Random.Range(-5, 5), transform.position.y), Quaternion.identity, transform);
+            GameObject newCloud = Instantiate(cloudPrefab[Random.Range(0, cloudPrefab.Length)], new Vector2(Random.Range(-5, 5), transform.position.y), Quaternion.identity, transform);
+            float size = Random.Range(1, 5);
+            newCloud.transform.localScale = new Vector3(size, size);
+            newCloud.GetComponent<Cloud>().SetParallaxSpeed(size);
         }
 
     }
