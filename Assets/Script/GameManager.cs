@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     }
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 	    instance = this;
 	    GlobalGameManager.Instance.Win = false;
