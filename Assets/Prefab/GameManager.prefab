@@ -256,3 +256,4 @@ MonoBehaviour:
   lifeUI: {fileID: 0}
   cursorUI: {fileID: 0}
   endTime: 60
+  pauseCanvas: {fileID: 0}

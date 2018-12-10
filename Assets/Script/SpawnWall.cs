@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnWall : MonoBehaviour
 {
-    [SerializeField] private GameObject wallPrefab;
+    [SerializeField] private GameObject[] wallClassicPrefab;
     private GameObject currentWall;
     private GameObject nextWall;
 
@@ -17,7 +17,7 @@ public class SpawnWall : MonoBehaviour
     {
         StartCoroutine(SpawnDelay());
 
-        nextWall = wallPrefab;
+        nextWall = wallClassicPrefab[Random.Range(0,wallClassicPrefab.Length)];
         currentWall = Instantiate(nextWall, transform);
 
     }
@@ -29,7 +29,7 @@ public class SpawnWall : MonoBehaviour
         if (currentWall.transform.position.y >= nextWall.GetComponent<BoxCollider2D>().size.y/2+currentWall.GetComponent<BoxCollider2D>().size.y/2 + transform.position.y)
         {
             currentWall = Instantiate(nextWall, new Vector2(currentWall.transform.position.x, currentWall.transform.position.y + GameManager.Instance.Speed - (nextWall.GetComponent<BoxCollider2D>().size.y / 2 + currentWall.GetComponent<BoxCollider2D>().size.y /2)), Quaternion.identity, transform);
-            nextWall = wallPrefab;
+            nextWall = wallClassicPrefab[Random.Range(0, wallClassicPrefab.Length)];
         }
 
     }

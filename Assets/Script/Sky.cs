@@ -7,9 +7,13 @@ public class Sky : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-		transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * ((GameManager.Instance.Speed/Time.fixedDeltaTime)*GameManager.Instance.EndTime)+transform.position.y);
-        
-
+        Debug.Log(transform.localScale);
+	    Debug.Log(GameManager.Instance);
+        Debug.Log(GameManager.Instance.Speed);
+	    Debug.Log(Time.fixedDeltaTime);
+        Debug.Log(GameManager.Instance.EndTime);
+        Debug.Log(transform.position.y);
+	    transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * ((GameManager.Instance.Speed/Time.fixedDeltaTime)*GameManager.Instance.EndTime)+transform.position.y);
 	}
 	
 	// Update is called once per frame

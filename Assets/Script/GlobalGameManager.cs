@@ -18,7 +18,7 @@ public class GlobalGameManager : MonoBehaviour {
         get { return instance; }
     }
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         if (instance)
         {

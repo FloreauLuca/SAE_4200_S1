@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     { get { return endTime; } set { endTime = value; } }
     private float currentTime;
 
+    [SerializeField] private GameObject pauseCanvas;
+
     private static GameManager instance;
     public static GameManager Instance
     {
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
     }
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 	    instance = this;
 	    GlobalGameManager.Instance.Win = false;
@@ -76,11 +78,13 @@ public class GameManager : MonoBehaviour
 	        {
 	            Time.timeScale = 1;
 	            paused = false;
+                pauseCanvas.SetActive(false);
 	        }
 	        else
 	        {
 	            Time.timeScale = 0;
 	            paused = true;
+                pauseCanvas.SetActive(true);
 	        }
         }
 	}

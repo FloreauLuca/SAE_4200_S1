@@ -117,7 +117,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.66, y: 1.2}
   m_EdgeRadius: 0
 --- !u!82 &82156000837149420
 AudioSource:
@@ -247,15 +247,15 @@ MonoBehaviour:
   playerSpeed: 10
   type: 1
   maxSpeed: 25
-  decreasevalue: 1
-  life: 3
+  decreasevalue: 2
+  life: 5
   hitCooldown: 2
   currentType: 0
-  playerIdle: {fileID: 21300000, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
-  playerLeft: {fileID: 21300006, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
-  playerRight: {fileID: 21300008, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
-  playerUp: {fileID: 21300002, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
-  playerDown: {fileID: 21300004, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
+  playerIdle: {fileID: 21300000, guid: 2b8d7976dbcabca42866a5a23316e589, type: 3}
+  playerLeft: {fileID: 21300000, guid: 8458f295c1bcba9499c50c2c1313c3af, type: 3}
+  playerRight: {fileID: 21300000, guid: 1b4c2a971a7e1d0418c1e07d874a30f2, type: 3}
+  playerUp: {fileID: 21300000, guid: 1afc9878ceda0d94bb9f1dbc04f4ecad, type: 3}
+  playerDown: {fileID: 21300000, guid: 4d41ac608ac0d77418d4e4f724381aee, type: 3}
 --- !u!212 &212530652011498752
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -291,7 +291,7 @@ SpriteRenderer:
   m_SortingLayerID: -1761283379
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b1f6324dc82cbad46add52e834db8955, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b8d7976dbcabca42866a5a23316e589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
