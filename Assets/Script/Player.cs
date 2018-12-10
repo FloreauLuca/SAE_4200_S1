@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Xml;
-using UnityEditor.Experimental.U2D;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -35,11 +33,14 @@ public class Player : MonoBehaviour
 
 
     private Animator animator;
+
+    private AudioSource audioSource;
 	// Use this for initialization
 	void Start ()
 	{
 	    animator = GetComponent<Animator>();
 	    rigidbody2D = GetComponent<Rigidbody2D>();
+	    audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -135,12 +136,13 @@ public class Player : MonoBehaviour
 	    }
     }
 
-    public void Hit(int damage)
+    public void Hit(int damage, AudioClip audio)
     {
         if (!animator.GetBool("HitCooldown"))
         {
             life -= damage;
             GameManager.Instance.SetUILife(life);
+            audioSource.PlayOneShot(audio);
             if (life <= 0)
             {
                 animator.SetTrigger("Death");

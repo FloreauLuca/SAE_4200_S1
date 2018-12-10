@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  hitSound: {fileID: 8300000, guid: ef8256d1199ca5146b0faa0c29b550ec, type: 3}
 --- !u!114 &114842605850646002
 MonoBehaviour:
   m_ObjectHideFlags: 1

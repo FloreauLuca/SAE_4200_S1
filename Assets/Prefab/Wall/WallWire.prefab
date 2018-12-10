@@ -71,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4212389887569414}
   - component: {fileID: 61599434324890760}
+  - component: {fileID: 114353929703607660}
   m_Layer: 0
   m_Name: Electric
   m_TagString: Untagged
@@ -221,6 +222,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114353929703607660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437369020273064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ee45d887ca6bc4c9568c08df827426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  hitSound: {fileID: 8300000, guid: 3336b47ea648a444285b07a8a9f966ad, type: 3}
 --- !u!114 &114806855776598858
 MonoBehaviour:
   m_ObjectHideFlags: 1

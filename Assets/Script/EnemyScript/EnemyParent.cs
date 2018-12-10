@@ -6,6 +6,8 @@ public class EnemyParent : MonoBehaviour
 {
     [SerializeField] protected int damage;
 
+    [SerializeField] protected AudioClip hitSound;
+
 	// Use this for initialization
 	protected void Start ()
 	{
@@ -21,7 +23,7 @@ public class EnemyParent : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Player>().Hit(damage);
+            other.GetComponent<Player>().Hit(damage, hitSound);
         }
     }
 }
