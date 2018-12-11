@@ -450,6 +450,11 @@ Prefab:
       propertyPath: pauseCanvas
       value: 
       objectReference: {fileID: 1129354431}
+    - target: {fileID: 82321252647193298, guid: a5aceba423899a943a1a6480358a0aac,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6afad1d64aa86604fb8433646e76b16e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5aceba423899a943a1a6480358a0aac, type: 2}
   m_IsPrefabAsset: 0
@@ -984,7 +989,7 @@ Transform:
   m_GameObject: {fileID: 727716735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalScale: {x: 1000, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1443174722}
   m_RootOrder: 0
@@ -1024,7 +1029,7 @@ SpriteRenderer:
   m_SortingLayerID: -180198301
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5e0135befa64e584596ae785ea7a1ab3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5b14197cb8b8f94bb160f0f522e051d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2858,7 +2863,7 @@ Transform:
   m_GameObject: {fileID: 2118415496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalScale: {x: 1000, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1832299471}
   m_RootOrder: 0
@@ -2898,7 +2903,7 @@ SpriteRenderer:
   m_SortingLayerID: -180198301
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 5e0135befa64e584596ae785ea7a1ab3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5b14197cb8b8f94bb160f0f522e051d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_FlipX: 0
   m_FlipY: 0
