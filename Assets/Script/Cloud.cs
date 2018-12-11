@@ -22,5 +22,5 @@ public class Cloud : MonoBehaviour
         parallaxSpeed /= size;
         GetComponentInChildren<SpriteRenderer>().sortingOrder = 10- (int)size;
     }
-
+    
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeskLauncher : EnemyParent {
 
-    [SerializeField] private GameObject deskPrefab;
+    [SerializeField] private GameObject[] furniturePrefab;
 
     [SerializeField] private float launcherRate;
     // Use this for initialization
@@ -23,7 +23,7 @@ public class DeskLauncher : EnemyParent {
         while (gameObject)
         {
             yield return new WaitForSecondsRealtime(launcherRate);
-            Instantiate(deskPrefab, transform);
+            Instantiate(furniturePrefab[Random.Range(0, furniturePrefab.Length)], transform);
         }
     }
 }
