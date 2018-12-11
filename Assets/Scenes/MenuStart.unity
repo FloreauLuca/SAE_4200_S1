@@ -304,7 +304,6 @@ GameObject:
   - component: {fileID: 399240483}
   - component: {fileID: 399240486}
   - component: {fileID: 399240485}
-  - component: {fileID: 399240484}
   m_Layer: 5
   m_Name: StartText
   m_TagString: Untagged
@@ -330,24 +329,6 @@ RectTransform:
   m_AnchoredPosition: {x: 414, y: -538}
   m_SizeDelta: {x: 800, y: 253}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &399240484
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 399240482}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e00d6bd80534ac49b313f51957df22b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &399240485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,16 +350,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: '- Press Space or A to start -'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 96fa1b9946113a3429b9ebead810b458, type: 2}
-  m_sharedMaterial: {fileID: 21642850700367076, guid: 96fa1b9946113a3429b9ebead810b458,
+  m_fontAsset: {fileID: 11400000, guid: 4d9606f89b96f0a4d9901e066dfe90ca, type: 2}
+  m_sharedMaterial: {fileID: 21289057933668856, guid: 4d9606f89b96f0a4d9901e066dfe90ca,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290576639
-  m_fontColor: {r: 1, g: 0, b: 0.74448013, a: 1}
+    rgba: 4293721856
+  m_fontColor: {r: 0, g: 1, b: 0.92939377, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -568,7 +549,7 @@ Transform:
   m_GameObject: {fileID: 778363451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.414, y: 2.414, z: 2.414}
+  m_LocalScale: {x: -2.414, y: 2.414, z: 2.414}
   m_Children: []
   m_Father: {fileID: 1318808028}
   m_RootOrder: 0
@@ -608,7 +589,7 @@ SpriteRenderer:
   m_SortingLayerID: -1761283379
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 06f0106081bcf2a48be78b0c17cf7d78, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cdcf4b79c28e68540907006945abd0a4, type: 3}
   m_Color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   m_FlipX: 0
   m_FlipY: 0
