@@ -7,7 +7,7 @@ public class Sky : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-	    transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * ((GameManager.Instance.Speed/Time.fixedDeltaTime)*GameManager.Instance.EndTime)+transform.position.y);
+	    transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * ((GameManager.Instance.Speed/Time.fixedDeltaTime)*GameManager.Instance.EndTime)+transform.position.y + 5);
 	}
 	
 	// Update is called once per frame

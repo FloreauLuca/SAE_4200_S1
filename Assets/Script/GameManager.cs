@@ -26,9 +26,11 @@ public class GameManager : MonoBehaviour
     public bool Paused
     { get { return paused; } set { paused = value; } }
 
-    [SerializeField] private GameObject lifeUI;
-    public GameObject LifeUI
+    [SerializeField] private GameObject[] lifeUI;
+    public GameObject[] LifeUI
     { get { return lifeUI; } set { lifeUI = value; } }
+
+    [SerializeField] private Sprite eggBreakSprite;
 
     [SerializeField] private GameObject cursorUI;
     public GameObject CursorUI
@@ -90,8 +92,15 @@ public class GameManager : MonoBehaviour
 
     public void SetUILife(int life)
     {
-        lifeUI.GetComponent<RectTransform>().sizeDelta = new Vector2(lifeUI.GetComponent<RectTransform>().sizeDelta.y * life, lifeUI.GetComponent<RectTransform>().sizeDelta.y);
+        StartCoroutine(LooseLife(life));
 
+    }
+
+    IEnumerator LooseLife(int life)
+    {
+        lifeUI[life].GetComponent<Image>().sprite = eggBreakSprite;
+        yield return new WaitForSecondsRealtime(1);
+        Destroy(lifeUI[life]);
     }
 
     public void SetCursor()
