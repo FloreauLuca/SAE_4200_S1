@@ -31,7 +31,7 @@ public class EndMenu : MonoBehaviour
 	void Update () {
 	    if (Input.GetButtonDown("Start"))
 	    {
-	        SceneManager.LoadScene("MainScene");
+	        SceneManager.LoadScene("MenuStart");
 	    }
     }
 }
